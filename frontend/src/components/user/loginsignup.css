@@ -1,0 +1,229 @@
+.LoginSignUpContainer {
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* margin-top: 3%; */
+}
+.LoginSignUpBox {
+  background-color: white;
+  width: 560px;
+
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  /* box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.75); */
+  padding: 10px 20px;
+  box-shadow: 0px 1px 38px -5px rgba(44, 39, 39, 0.75);
+  -webkit-box-shadow: 0px 1px 38px -5px rgba(44, 39, 39, 0.75);
+  -moz-box-shadow: 0px 1px 38px -5px rgba(44, 39, 39, 0.75);
+  border-radius: 10px;
+}
+.login_signUp_toggle {
+  display: flex;
+  height: 3vmax;
+}
+.login_signUp_toggle > p {
+  font: 300 1vmax "Roboto";
+  color: rgba(0, 0, 0, 0.678);
+  transition: all 0.5s;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 50%;
+}
+.login_signUp_toggle > p:active {
+  background-color: #fff !important;
+}
+.login_signUp_toggle > p:hover {
+  color: #444 !important;
+}
+
+.LoginSignUpBox > button {
+  background-color: #444 !important;
+  color: #444 !important;
+  height: 3px;
+  width: 50%;
+  border: none;
+  transition: all 0.5s;
+}
+
+.loginForm {
+  padding-top: 30px;
+}
+
+.loginForm,
+.signUpForm {
+  padding-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 0px;
+
+  justify-content: space-evenly;
+  height: 70%;
+  transition: all 0.5s;
+}
+
+.signUpForm {
+  transform: translateY(-115%) translateX(-115vmax);
+  transition: all 0.5s;
+}
+
+.shiftToLeft {
+  transform: translateX(-115%);
+}
+.shiftToNeutral {
+  transform: translateX(0%);
+}
+
+.shiftToNeutralForm {
+  transform: translateX(0%) translateY(-109%);
+}
+
+.shiftToRight {
+  transform: translateX(100%);
+}
+
+/* ----------------saim------------ */
+
+.group_field label {
+  margin-bottom: 10px;
+  display: block;
+  text-align: left;
+}
+.group_field label span {
+  color: red;
+}
+
+.group_field input {
+  margin-bottom: 20px;
+  width: 95%;
+  height: 40px;
+  float: left;
+  border: 1px solid transparent;
+  box-shadow: none;
+  outline: none;
+  text-shadow: none;
+  padding: 2px 5px 5px 0px;
+  border-bottom-color: #444;
+}
+.group_field input:focus,
+.group_field input:hover {
+  background: #eee;
+  border-bottom: 1px solid #444;
+}
+.group_field.e_btn {
+  padding-top: 10px;
+  text-align: center;
+}
+.group_field.e_btn > button:hover {
+  background: rgba(238, 238, 238, 0.781);
+  color: #000;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  font-weight: bold;
+}
+.group_field button {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #444;
+  text-transform: uppercase;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
+}
+.group_field .f_link {
+  color: #444;
+  float: right;
+}
+.group_field .f_link:hover,
+.content_holder .group_field .f_link:focus {
+  color: #000;
+}
+.group_field p {
+  padding: 10px;
+}
+.group_field_log {
+  padding: 10px;
+  text-align: center;
+}
+/* -------Social Login Style------ */
+.social_login {
+  text-align: center;
+}
+.social_login button {
+  background-color: #444 !important;
+  color: #fff !important;
+  width: 40% !important;
+  padding: 5px 10px !important;
+  box-shadow: none !important;
+  border: none !important;
+  font-weight: normal !important;
+  margin-right: 20px;
+  border-radius: 0px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif !important;
+  transition: all ease-in-out 0.3s;
+}
+.social_login button div {
+  background: transparent !important;
+}
+
+.social_login button:hover {
+  background-color: #eee !important;
+  color: #444 !important;
+}
+.group_field {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .LoginSignUpContainer {
+    background-color: white;
+  }
+  .LoginSignUpBox {
+    width: 100vw;
+  }
+
+  .login_signUp_toggle > p {
+    font: 300 1.5vmax "Roboto";
+  }
+}
+/* -------saim */
+
+/* Media Query for responsive for Auth */
+@media screen and (max-width: 480px) {
+  .group_field input {
+    font-size: 12px;
+    float: none;
+    padding: 5px 5px 5px 0px;
+    height: 30px;
+    margin-bottom: 20px;
+  }
+  .group_field button {
+    padding: 10px;
+  }
+
+  .social_login {
+    text-align: center;
+  }
+  .social_login button {
+    width: 100% !important;
+    padding: 0px 5px !important;
+  }
+  .group_field p {
+    font-size: 12px;
+    text-align: center;
+  }
+  .forget_pass button {
+    padding: 10px;
+  }
+}

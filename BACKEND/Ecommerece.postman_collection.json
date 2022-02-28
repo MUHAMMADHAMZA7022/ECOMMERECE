@@ -1,0 +1,915 @@
+{
+	"info": {
+		"_postman_id": "f7dcfbf4-89f9-0cc4-93cd-97ec18816787",
+		"name": "Ecommerece",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Create a Product ---Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"POCO F3\",\n\t\"description\":\"Xiomi product\",\n\t\"price\":5000,\n\t\"cateogery\":\"MObiles\",\n\"images\":{\n\t\t\"publicid\":\"sampleimage\",\n\t\"url\":\"sampleurl\"\n\t\n}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/admin/newproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"admin",
+								"newproduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Product ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "keyword",
+								"value": "samosa"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/allproducts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"allproducts"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "cateogery",
+									"value": "laptop",
+									"disabled": true
+								},
+								{
+									"key": "price[gte]",
+									"value": "1200",
+									"disabled": true
+								},
+								{
+									"key": "price[lt]",
+									"value": "1300",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product ---Admin",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Muhammad Ali\",\n\t\"description\":\"Samsung product\",\n\t\"price\":2000,\n\t\"cateogery\":\"Suit\",\n\"images\":{\n\t\t\"publicid\":\"sampleimage\",\n\t\"url\":\"sampleurl\"\n\t\n}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/admin/product/616c18f038d49c3c2224ccf6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"admin",
+								"product",
+								"616c18f038d49c3c2224ccf6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product ----Admin",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/admin/product/616c1b3d3a28704c1260751d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"admin",
+								"product",
+								"616c1b3d3a28704c1260751d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/oneproduct/6197daf0651c49b49d85b9e8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"oneproduct",
+								"6197daf0651c49b49d85b9e8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/allproducts?keyword=muhammad sameer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"allproducts"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "muhammad sameer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Product --Cateogery",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "cateogery",
+								"value": "laptop"
+							},
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/allproducts?cateogery=laptop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"allproducts"
+							],
+							"query": [
+								{
+									"key": "cateogery",
+									"value": "laptop"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Price Filtering---------------gt>lte>=1200 sy bari 2000 k barabar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "price[gt]",
+								"value": "1200"
+							},
+							{
+								"key": "price[lt]",
+								"value": "20000"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/allproducts?price[gte]=1100&price[lte]=1200",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"allproducts"
+							],
+							"query": [
+								{
+									"key": "price[gte]",
+									"value": "1100"
+								},
+								{
+									"key": "price[lte]",
+									"value": "1200"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagination ------Page py product kitni dikhni e.g;- page=1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "page",
+								"value": "1"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/allproducts?page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"allproducts"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ratings & reviews",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productid\":\"6197daf0651c49b49d85b9e8\",\n\t \"comment\":\"Allaw monile ha kamal\",\n\t \"ratings\":5\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allreviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/allreviews?id=6197daf0651c49b49d85b9e8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"allreviews"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6197daf0651c49b49d85b9e8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete reviews",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/allreviews?id=6197e036e371571c10349b65&productid=6197daf0651c49b49d85b9e8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"allreviews"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6197e036e371571c10349b65"
+								},
+								{
+									"key": "productid",
+									"value": "6197daf0651c49b49d85b9e8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users Route",
+			"item": [
+				{
+					"name": "Get user detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"oldpassword\":\"hamza0987\",\n\t\"newpassword\":\"hamza098\",\n\t\"conformpassword\":\"hamza098\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/password/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"password",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prrofile update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\t\"name\":\"hamza\",\n\t\"email\":\"muhammadhamza7022@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/profile/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"profile",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alluser -------Admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/admin/allusers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"admin",
+								"allusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "singleuser (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/admin/singleuser/6197d015ea0455aac24bbd9e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"admin",
+								"singleuser",
+								"6197d015ea0455aac24bbd9e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update role ------Admin",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Muhammad Sameer\",\n\"email\":\"muhammadsameer7022@gmail.com\",\n\t\"role\":\"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/admin/updaterole/6197d015ea0455aac24bbd9e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"admin",
+								"updaterole",
+								"6197d015ea0455aac24bbd9e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user ---ADmin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/admin/deleteuser/6197d015ea0455aac24bbd9e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"admin",
+								"deleteuser",
+								"6197d015ea0455aac24bbd9e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication users",
+			"item": [
+				{
+					"name": "Createuser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Muhammad Sameer\",\n\t\"email\":\"muhammadsameer702@gmail.com\",\n\t\" public_id\":\"sampe id\",\n\t\"url\":\"sample url\",\n\t\"password\":\"ararhs702222\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"email\":\"muhammadsameer702@gmail.com\",\n        \"password\":\"ararhs702222\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FORGOT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"muhammadhamza7022@gmail.com\"\n\t\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/password/forgot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"password",
+								"forgot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RESETPASSWORD",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"password\":\"hamza098\",\n\t\"conformpassword\":\"hamza098\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/password/reset/05b760652bf69b5e0eb4663b2495a544d7bc0e7d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"password",
+								"reset",
+								"05b760652bf69b5e0eb4663b2495a544d7bc0e7d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "new order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemsPrice\": 200,\r\n    \"taxPrice\": 30,\r\n    \"shippingPrice\": 100,\r\n    \"totalPrice\": 300,\r\n    \"orderItems\": [\r\n        {\r\n            \"product\": \"6188e02fc45f648e1515ca8b\",\r\n            \"name\": \"mobile\",\r\n            \"price\": 1200,\r\n            \"image\": \"sample image\",\r\n            \"quantity\": 1\r\n        }\r\n    ],\r\n    \"shippingInfo\": {\r\n        \"name\": \"shoes\",\r\n        \"address\": \"pakistan\",\r\n        \"city\": \"lahore\",\r\n        \"country\":\"pakistannn\",\r\n        \"state\": \"pakistan\",\r\n        \"pinCode\": 500,\r\n        \"phoneNo\": 3333\r\n    },\r\n    \"paymentInfo\": {\r\n        \"id\": \"sample paymentinfo\",\r\n        \"status\": \"succeeded\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/order/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"order",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Order Check by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/order/61a5168df612ad49a46810ba",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"order",
+								"61a5168df612ad49a46810ba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/orders/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"orders",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Orders By --ADMIN",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/admin/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"admin",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update order status --Admin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"Delivered\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/admin/order/61a5168df612ad49a46810ba",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"admin",
+								"order",
+								"61a5168df612ad49a46810ba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete order --Admin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vasal/admin/order/61a52be2ec23e93dec6f07cf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vasal",
+								"admin",
+								"order",
+								"61a52be2ec23e93dec6f07cf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

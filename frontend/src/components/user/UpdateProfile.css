@@ -1,0 +1,23 @@
+.updateProfileContainer {
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 20%;
+  left: 0;
+}
+
+.updateProfileHeading {
+  text-align: center;
+  color: rgba(0, 0, 0);
+  font: 400 1.3vmax "Roboto";
+  padding: 1.3vmax;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+  width: 50%;
+  margin: auto;
+}
+
+.group_field > label > img {
+  width: 4vmax;
+}
